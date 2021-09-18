@@ -4,7 +4,7 @@ import debug from "./debug";
 import { PLUGIN_NAME } from "./const";
 
 export interface Options {
-  content: string;
+  content?: string;
   env?: string[];
 }
 
