@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./lib",
+    "moduleResolution": "node",
+    "rootDir": "./src",
+    "strict": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "lib": ["es2019"],
+    "declaration": true
+  },
+  "files": ["src/main.ts"],
+  "exclude": ["node_modules", "**/*.test.ts", "lib"]
+}
