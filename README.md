@@ -58,7 +58,7 @@ export default {
 <tr>
 <td>env</td>
 <td>string[]</td>
-<td>["development", "test"]</td>
+<td>[]</td>
 <td>When the value of process.env.NODE_ENV is in the list, the plugin will take effect</td>
 </tr>
 </table>
