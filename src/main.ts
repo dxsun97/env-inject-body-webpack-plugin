@@ -3,14 +3,16 @@ import type { Compiler, WebpackPluginInstance } from "webpack";
 import debug from "./debug";
 import { PLUGIN_NAME } from "./const";
 
+export type Env = string | undefined
+
 export interface Options {
   content?: string;
-  env?: string[];
+  env?: Env[];
 }
 
 const DEFAULT_OPTIONS: Options = {
   content: "",
-  env: ["development", "test"],
+  env: []
 };
 
 export default class EnvInjectBodyPlugin implements WebpackPluginInstance {
@@ -48,11 +50,11 @@ export default class EnvInjectBodyPlugin implements WebpackPluginInstance {
 
   apply(compiler: Compiler) {
     const acceptEnv = this.options.env;
-    if (acceptEnv === undefined || acceptEnv.length === 0) {
+    if (!Array.isArray(acceptEnv) || acceptEnv.length === 0) {
       debug("the env option is not specified, the plugin does nothing");
       return;
     }
-    if (!(process.env.NODE_ENV && acceptEnv.includes(process.env.NODE_ENV))) {
+    if (!(acceptEnv.includes(process.env.NODE_ENV!))) {
       debug(
         "%s needs to be one of the following values: %o",
         "process.env.NODE_ENV",
