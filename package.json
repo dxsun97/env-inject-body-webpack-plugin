@@ -1,6 +1,6 @@
 {
   "name": "env-inject-body-webpack-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
   "description": "Webpack plugin that injects a custom string into the end of the body of html-webpack-plugin output according to the environment.",
